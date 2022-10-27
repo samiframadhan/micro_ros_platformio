@@ -27,7 +27,7 @@ class Repository:
     def clone(self, folder):
         self.path = folder + "/" + self.name
         # TODO(pablogs) ensure that git is installed
-        command = "git clone -b {} {} {}".format(self.branch, self.url, self.path)
+        command = "git clone -b {} {} '{}'".format(self.branch, self.url, self.path)
         result = run_cmd(command)
 
         if 0 != result.returncode:
